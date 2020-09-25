@@ -22,14 +22,17 @@ public class ucSeven {
 			case NO_PLAY:
 				position=position;
 				break;
-			case LADDER :
-				position+=dieroll;
+			case LADDER:
+				if (position+dieroll>100)
+					position=position;
+				else
+					position+=dieroll;
 				break;
 			case SNAKE:
 				if (position-dieroll>=0)
 					position-=dieroll;
 				else
-				position=0;
+					position=0;
 				break;
 			}
 			System.out.println(position);
